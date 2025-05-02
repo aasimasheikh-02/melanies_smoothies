@@ -1,0 +1,6 @@
+name: pharma_project
+profile: default
+
+models:
+  pharma_project:
+    # +schema: p_transformed_sch  # This sets the target schema for transformed models
