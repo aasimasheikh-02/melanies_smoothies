@@ -3,4 +3,14 @@ profile: default
 
 models:
   pharma_project:
+    Staging:
+      +materialized: table
     # +schema: p_transformed_sch  # This sets the target schema for transformed models
+
+
+# dbt_project.yml
+
+# models:
+#   jaffle_shop:
+#     staging:
+#       +materialized: view
