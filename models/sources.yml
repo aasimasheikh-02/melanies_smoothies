@@ -1,0 +1,7 @@
+version: 2
+sources:
+  - name: pharma_project
+    schema: p_analytics_sch
+    tables:
+      - name: date_dimension
+        description: "Date dimension table loaded from the CSV seed file."

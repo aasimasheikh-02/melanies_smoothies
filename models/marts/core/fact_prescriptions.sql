@@ -3,20 +3,20 @@ SELECT
   p.prescription_id,
   p.issue_date,
   p.expiry_date,
-  p.status,
+  p.STATUS_NORMALIZED,
   p.patient_id,
-  pat.name AS patient_name,
+  patient_name,
   p.doctor_id,
-  doc.name AS doctor_name,
+  CONCAT(FIRST_NAME, LAST_NAME) AS doctor_name,
   pi.drug_id,
-  drg.name AS drug_name,
+  BRAND_NAME,
   pi.quantity,
   pi.dosage,
   pi.frequency,
   pi.duration_days,
   d.date_id AS issue_date_id
-FROM {{ ref('stg_prescriptions') }} p
-JOIN {{ ref('stg_prescription_items') }} pi ON pi.prescription_id = p.prescription_id
+FROM {{ ref('prescriptions_tb') }} p
+JOIN {{ ref('Prescription_items_tb') }} pi ON pi.prescription_id = p.prescription_id
 LEFT JOIN {{ ref('dim_patients') }} pat ON p.patient_id = pat.patient_id
 LEFT JOIN {{ ref('dim_doctors') }} doc ON p.doctor_id = doc.doctor_id
 LEFT JOIN {{ ref('dim_drugs') }} drg ON pi.drug_id = drg.drug_id

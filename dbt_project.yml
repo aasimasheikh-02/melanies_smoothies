@@ -4,6 +4,7 @@ profile: default
 models:
   pharma_project:
     Staging:
+      +schema: P_TRANSFORMED_SCH
       +materialized: table
 
     marts:
