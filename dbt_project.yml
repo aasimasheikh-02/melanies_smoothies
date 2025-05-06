@@ -5,12 +5,14 @@ models:
   pharma_project:
     Staging:
       +materialized: table
-    # +schema: p_transformed_sch  # This sets the target schema for transformed models
 
+    marts:
+      +schema: p_analytics_sch
+      core:
+        +materialized: table
 
-# dbt_project.yml
-
-# models:
-#   jaffle_shop:
-#     staging:
-#       +materialized: view
+seeds:
+  pharma_project:
+    +schema: p_analytics_sch
+    date_dimension:
+      +quote_columns: true
