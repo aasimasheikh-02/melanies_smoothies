@@ -5,9 +5,9 @@ SELECT
   drug_id,
   quantity, 
   batch_number,
-  TRY_TO_DATE(TO_VARCHAR(manufacture_date), 'DD-MM-YYYY') AS manufacture_date,
-  TRY_TO_DATE(TO_VARCHAR(expiry_date), 'DD-MM-YYYY') AS expiry_date,
-  TRY_TO_DATE(TO_VARCHAR(last_restocked), 'DD-MM-YYYY') AS last_restocked,
+  manufacture_date,
+  expiry_date,
+  last_restocked,
 
  -- Standardizing date format
   
