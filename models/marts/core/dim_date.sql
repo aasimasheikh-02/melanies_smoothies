@@ -9,4 +9,4 @@ SELECT
   "day_name",
   "day_of_month",
   "weekday"
-FROM {{ source('pharma_project', 'date_dimension') }}
+FROM {{ ref('date_dimension') }}
