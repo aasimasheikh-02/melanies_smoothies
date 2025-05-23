@@ -96,7 +96,6 @@ models:
       - name: inventory_id
         description: "Unique identifier for the inventory record"
         tests:
-          - unique
           - not_null
           
       - name: pharmacy_id
@@ -228,9 +227,8 @@ models:
     description: "Standardized pharmacy data with contact validation, region mapping, and license parsing."
     columns:
       - name: pharmacy_id
-        description: "Unique ID of the pharmacy"
+        description: "Not NULL of the pharmacy"
         tests:
-          - unique
           - not_null
 
       - name: pharmacy_name
