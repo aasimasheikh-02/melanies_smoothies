@@ -330,7 +330,6 @@ models:
       - name: prescription_id
         description: "Unique prescription identifier"
         tests:
-          - unique
           - not_null
 
       - name: patient_id
